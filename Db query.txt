@@ -1,0 +1,178 @@
+CREATE TABLE [Bus_Info](
+	[Name] [nvarchar](200) NULL,
+	[Address] [nvarchar](200) NULL,
+	[Telephone] [nvarchar](200) NULL,
+	[Branch] [nvarchar](200) NULL,
+	[Picture] [image] NULL
+)
+
+CREATE TABLE [Users](
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Mobile] [nvarchar](200) NULL,
+	[Address] [nvarchar](200) NULL,
+	[Username] [nvarchar](200) NULL,
+	[Password] [nvarchar](200) NULL,
+	[Privilege] [nvarchar](200) NULL,
+	[Branch] [nvarchar](200) NULL,
+)
+
+CREATE TABLE [Branches](
+	[code] [nvarchar](200) NULL,
+	[Name] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Account_Type](
+	[code] [nvarchar](200) NULL,
+	[Name] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Min_Balance](
+	[Account] [nvarchar](200) NULL,
+	[Amount] [money] NULL
+)
+
+CREATE TABLE [Customer](
+	[FID] [bigint] NOT NULL,
+	[Date] [nvarchar](50) NULL,
+	[Title] [nvarchar](50) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Mobile] [nvarchar](200) NULL,
+	[Address] [nvarchar](200) NULL,
+	[Digital_Address] [nvarchar](200) NULL,
+	[DOB] [nvarchar](200) NULL,
+	[Occupation] [nvarchar](200) NULL,
+	[Marital_Status] [nvarchar](200) NULL,
+	[Email] [nvarchar](200) NULL,
+	[Account_Type] [nvarchar](200) NULL,
+	[Account_No] [nvarchar](200) NULL,
+	[status] [nvarchar](200) NULL,
+	[Officer] [nvarchar](200) NULL,
+	[Picture] [image] NULL,
+	[sign] [image] NULL,
+	[Branch] [nvarchar](200) NULL,
+	[ID_Card] [nvarchar](200) NULL,
+	[ID_Type] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Account](
+	[Account_No] [nvarchar](200) NULL,
+	[Account_Type] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Balance] [money] NULL
+)
+
+CREATE TABLE [Next_Of_Kin](
+	[Account_No] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Relationship] [nvarchar](200) NULL,
+	[Mobile] [nvarchar](200) NULL,
+	[Address] [nvarchar](200) NULL
+)
+
+
+
+CREATE TABLE [Transactions](
+	[year] [nvarchar](200) NULL,
+	[month] [nvarchar](200) NULL,
+	[Date] [nvarchar](200) NULL,
+	[Time] [nvarchar](200) NULL,
+	[Account_No] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Deposit_By] [nvarchar](200) NULL,
+	[ID_Type] [nvarchar](200) NULL,
+	[ID] [nvarchar](200) NULL,
+	[Type] [nvarchar](200) NULL,
+	[Form_No] [nvarchar](200) NULL,
+	[Description] [nvarchar](200) NULL,
+	[Deposit] [money] NULL,
+	[Widrawal] [money] NULL,
+	[Entry_by] [nvarchar](200) NULL,
+	[Approval] [nvarchar](200) NULL,
+	[Approved_by] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Changes_log](
+	[year] [nvarchar](200) NULL,
+	[month] [nvarchar](200) NULL,
+	[Date] [nvarchar](200) NULL,
+	[Time] [nvarchar](200) NULL,
+	[Officer] [nvarchar](200) NULL,
+	[Form] [nvarchar](200) NULL,
+	[Account_No] [nvarchar](200) NULL,
+	[Description] [nvarchar](200) NULL,
+	[Amount_Change] [nvarchar](200) NULL,
+	[Status] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Loan](
+	[loan_No] [bigint] NOT NULL,
+	[day] [nchar](200) NULL,
+	[month] [nvarchar](200) NULL,
+	[year] [nvarchar](200) NULL,
+	[Date] [nvarchar](200) NULL,
+	[Account_No] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Business_Name] [nvarchar](200) NULL,
+	[Business_Address] [nvarchar](200) NULL,
+	[Description] [nvarchar](900) NULL,
+	[Amount] [money] NULL,
+	[Purpose] [nvarchar](900) NULL,
+	[Installment] [money] NULL,
+	[Period_Repayment] [nvarchar](900) NULL,
+	[Security] [nvarchar](900) NULL,
+	[Start_date] [nvarchar](200) NULL,
+	[End_date] [nvarchar](200) NULL,
+	[Principal] [money] NULL,
+	[Interest] [money] NULL,
+	[Loan] As ([Principal] + [Interest]),
+	[Status] [nvarchar](200) NULL,
+	[Officer] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Guarantor](
+	[Account_No] [nvarchar](200) NULL,
+	[Guarantor_No] [bigint] NOT NULL,
+	[Fullname] [nvarchar](200) NULL,
+	[Address] [nvarchar](200) NULL,
+	[Telephone] [nvarchar](200) NULL,
+	[Occupation] [nvarchar](200) NULL,
+	[Picture] [image] NULL,
+	[ID_Type] [nvarchar](200) NULL,
+	[ID] [nvarchar](200) NULL
+)
+
+
+CREATE TABLE [Loan_Payment](
+	[day] [nchar](200) NULL,
+	[month] [nvarchar](200) NULL,
+	[year] [nvarchar](200) NULL,
+	[Date] [nvarchar](200) NULL,
+	[Account_No] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Principal] [money] NULL,
+	[Interest] [money] NULL,
+	[Payment] [money] NULL,
+	[Officer] [nvarchar](200) NULL
+)
+
+CREATE TABLE [Loan_Balance](
+	[Account_No] [nvarchar](200) NULL,
+	[Surname] [nvarchar](200) NULL,
+	[Firstname] [nvarchar](200) NULL,
+	[Start_month] [nvarchar](200) NULL,
+	[Start_year] [nvarchar](200) NULL,
+	[End_month] [nvarchar](200) NULL,
+	[End_year] [nvarchar](200) NULL,
+	[Principal] [money] NULL,
+	[Interest] [money] NULL,
+	[Balance] As [Principal] + [Interest],
+	[Status] [nvarchar](200) NULL
+)
+
